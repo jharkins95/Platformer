@@ -30,6 +30,7 @@ public class GameCourt extends JPanel {
 	private Set<Integer> keysPressed;
 	
 	private DebugWindow debugWindow;
+	private InstructionsWindow instructionsWindow;
 	
 	private Timer renderingTimer;
 	private Timer keyPressTimer;
@@ -69,6 +70,8 @@ public class GameCourt extends JPanel {
 		
 		debugWindow = new DebugWindow(this);
 		debugWindow.setVisible(true);
+		
+		instructionsWindow = new InstructionsWindow();
 		
 		setFocusable(true);
 		requestFocusInWindow();
@@ -261,6 +264,10 @@ public class GameCourt extends JPanel {
 	
 	public void showDebugWindow() {
 		debugWindow.setVisible(true);
+	}
+	
+	public void showInstructionsWindow() {
+		instructionsWindow.setVisible(true);
 	}
 	
 	private void exit(int statusCode) {

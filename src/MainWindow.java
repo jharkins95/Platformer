@@ -10,6 +10,8 @@ import javax.swing.JButton;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
+
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.WindowAdapter;
@@ -65,6 +67,14 @@ public class MainWindow extends JFrame {
 				court.showDebugWindow();
 			}
 		});
+		
+		JMenuItem mntmInstructions = new JMenuItem("Instructions");
+		mntmInstructions.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				court.showInstructionsWindow();
+			}
+		});
+		mnFile.add(mntmInstructions);
 		mnFile.add(mntmDebugWindow);
 
 		mnFile.add(mntmQuit);
@@ -93,12 +103,14 @@ public class MainWindow extends JFrame {
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
+				MainWindow frame = null;
 				try {
-					MainWindow frame = new MainWindow();
+					frame = new MainWindow();
 					frame.setVisible(true);
 					frame.startGame();
 				} catch (Exception e) {
-					e.printStackTrace();
+					JOptionPane.showMessageDialog(frame, e.getMessage(), "Error", 
+							JOptionPane.ERROR_MESSAGE);
 				}
 			}
 		});
