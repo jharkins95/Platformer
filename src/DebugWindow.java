@@ -38,7 +38,7 @@ public class DebugWindow extends JFrame {
 		setType(Type.UTILITY);
 		setResizable(false);
 		setAutoRequestFocus(false);
-		setBounds(100, 100, 250, 300);
+		setBounds(100, 100, 270, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -82,47 +82,47 @@ public class DebugWindow extends JFrame {
 		
 		lblPlayerPx_val = new JLabel("0");
 		lblPlayerPx.setLabelFor(lblPlayerPx_val);
-		lblPlayerPx_val.setBounds(170, 10, 40, 14);
+		lblPlayerPx_val.setBounds(170, 10, 80, 14);
 		contentPane.add(lblPlayerPx_val);
 		
 		lblPlayerPy_val = new JLabel("0");
 		lblPlayerPy.setLabelFor(lblPlayerPy_val);
-		lblPlayerPy_val.setBounds(170, 25, 40, 14);
+		lblPlayerPy_val.setBounds(170, 25, 80, 14);
 		contentPane.add(lblPlayerPy_val);
 		
 		lblPlayerVx_val = new JLabel("0");
 		lblPlayerVx.setLabelFor(lblPlayerVx_val);
-		lblPlayerVx_val.setBounds(170, 40, 40, 14);
+		lblPlayerVx_val.setBounds(170, 40, 80, 14);
 		contentPane.add(lblPlayerVx_val);
 		
 		lblPlayerVy_val = new JLabel("0");
 		lblPlayerVy.setLabelFor(lblPlayerVy_val);
-		lblPlayerVy_val.setBounds(170, 55, 40, 14);
+		lblPlayerVy_val.setBounds(170, 55, 80, 14);
 		contentPane.add(lblPlayerVy_val);
 		
 		lblPlayerCollidingDown_val = new JLabel("false");
 		lblPlayerCollidingDown.setLabelFor(lblPlayerCollidingDown_val);
-		lblPlayerCollidingDown_val.setBounds(170, 70, 40, 14);
+		lblPlayerCollidingDown_val.setBounds(170, 70, 80, 14);
 		contentPane.add(lblPlayerCollidingDown_val);
 		
 		lblPlayerCollidingUp_val = new JLabel("false");
 		lblPlayerCollidingUp.setLabelFor(lblPlayerCollidingUp_val);
-		lblPlayerCollidingUp_val.setBounds(170, 85, 40, 14);
+		lblPlayerCollidingUp_val.setBounds(170, 85, 80, 14);
 		contentPane.add(lblPlayerCollidingUp_val);
 		
 		lblPlayerCollidingLeft_val = new JLabel("false");
 		lblPlayerCollidingLeft.setLabelFor(lblPlayerCollidingLeft_val);
-		lblPlayerCollidingLeft_val.setBounds(170, 100, 40, 14);
+		lblPlayerCollidingLeft_val.setBounds(170, 100, 80, 14);
 		contentPane.add(lblPlayerCollidingLeft_val);
 		
 		lblPlayerCollidingRight_val = new JLabel("false");
 		lblPlayerCollidingRight.setLabelFor(lblPlayerCollidingRight_val);
-		lblPlayerCollidingRight_val.setBounds(170, 115, 40, 14);
+		lblPlayerCollidingRight_val.setBounds(170, 115, 80, 14);
 		contentPane.add(lblPlayerCollidingRight_val);
 		
 		lblYAccel_val = new JLabel("0");
 		lblYAccel.setLabelFor(lblYAccel_val);
-		lblYAccel_val.setBounds(170, 190, 40, 14);
+		lblYAccel_val.setBounds(170, 190, 80, 14);
 		contentPane.add(lblYAccel_val);
 		
 		JLabel lblPlayerTouchingDown = new JLabel("playerTouchingDown:");
@@ -143,28 +143,28 @@ public class DebugWindow extends JFrame {
 		contentPane.add(lblPlayerTouchingRight);
 		
 		lblPlayerTouchingDown_val = new JLabel("false");
-		lblPlayerTouchingDown_val.setBounds(170, 130, 40, 14);
+		lblPlayerTouchingDown_val.setBounds(170, 130, 80, 14);
 		contentPane.add(lblPlayerTouchingDown_val);
 		
 		lblPlayerTouchingUp_val = new JLabel("false");
 		lblPlayerTouchingUp.setLabelFor(lblPlayerTouchingUp_val);
-		lblPlayerTouchingUp_val.setBounds(170, 145, 40, 14);
+		lblPlayerTouchingUp_val.setBounds(170, 145, 80, 14);
 		contentPane.add(lblPlayerTouchingUp_val);
 		
 		lblPlayerTouchingLeft_val = new JLabel("false");
 		lblPlayerTouchingLeft.setLabelFor(lblPlayerTouchingLeft_val);
-		lblPlayerTouchingLeft_val.setBounds(170, 160, 40, 14);
+		lblPlayerTouchingLeft_val.setBounds(170, 160, 80, 14);
 		contentPane.add(lblPlayerTouchingLeft_val);
 		
 		lblPlayerTouchingRight_val = new JLabel("false");
 		lblPlayerTouchingRight.setLabelFor(lblPlayerTouchingRight_val);
-		lblPlayerTouchingRight_val.setBounds(170, 175, 40, 14);
+		lblPlayerTouchingRight_val.setBounds(170, 175, 80, 14);
 		contentPane.add(lblPlayerTouchingRight_val);
 		
 		JSlider speedSlider = new JSlider();
 		speedSlider.setMaximum(1000);
 		speedSlider.setMinimum(1);
-		speedSlider.setBounds(23, 234, 200, 26);
+		speedSlider.setBounds(30, 234, 200, 26);
 		contentPane.add(speedSlider);
 		speedSlider.setValue(getSliderValue(GameCourt.DEFAULT_RENDERING_INTERVAL));
 		
@@ -176,7 +176,7 @@ public class DebugWindow extends JFrame {
 		
 		JLabel lblGameSpeed = new JLabel("Game Speed");
 		lblGameSpeed.setHorizontalAlignment(SwingConstants.CENTER);
-		lblGameSpeed.setBounds(83, 215, 79, 14);
+		lblGameSpeed.setBounds(92, 215, 79, 14);
 		contentPane.add(lblGameSpeed);
 	}
 	

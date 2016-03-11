@@ -107,10 +107,12 @@ public class MainWindow extends JFrame {
 				try {
 					frame = new MainWindow();
 					frame.setVisible(true);
+					System.out.println(Integer.MAX_VALUE);
 					frame.startGame();
 				} catch (Exception e) {
-					JOptionPane.showMessageDialog(frame, e.getMessage(), "Error", 
+					JOptionPane.showMessageDialog(frame, e.getStackTrace(), e.getClass().toString(),
 							JOptionPane.ERROR_MESSAGE);
+					System.exit(1);
 				}
 			}
 		});
