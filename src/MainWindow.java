@@ -5,6 +5,7 @@ import java.awt.GraphicsEnvironment;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.UIManager;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 import javax.swing.JMenuBar;
@@ -46,6 +47,7 @@ public class MainWindow extends JFrame {
 		JMenuItem mntmQuit = new JMenuItem("Quit");
 		
 		// Close operations
+		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
 				court.pause();
@@ -89,7 +91,6 @@ public class MainWindow extends JFrame {
 		int locX = gd.getDisplayMode().getWidth() / 2 - getWidth() / 2;
 		int locY = gd.getDisplayMode().getHeight() / 2 - getHeight() / 2;
 		setLocation(locX, locY);
-		
 		setVisible(true);
 	}
 	
@@ -105,9 +106,10 @@ public class MainWindow extends JFrame {
 			public void run() {
 				MainWindow frame = null;
 				try {
+					UIManager.setLookAndFeel(
+				            UIManager.getSystemLookAndFeelClassName());
 					frame = new MainWindow();
 					frame.setVisible(true);
-					System.out.println(Integer.MAX_VALUE);
 					frame.startGame();
 				} catch (Exception e) {
 					JOptionPane.showMessageDialog(frame, e.getStackTrace(), e.getClass().toString(),
