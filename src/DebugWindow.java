@@ -166,7 +166,7 @@ public class DebugWindow extends JFrame {
 		speedSlider.setMinimum(1);
 		speedSlider.setBounds(23, 234, 200, 26);
 		contentPane.add(speedSlider);
-		speedSlider.setValue(getSliderValue(GameCourt.DEFAULT_KEYPRESS_INTERVAL));
+		speedSlider.setValue(getSliderValue(GameCourt.DEFAULT_RENDERING_INTERVAL));
 		
 		speedSlider.addChangeListener(new ChangeListener() {
 			public void stateChanged(ChangeEvent e) {
