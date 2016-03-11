@@ -126,14 +126,8 @@ public class GameCourt extends JPanel {
 		}
 		
 		if (keyQuit) {
-			if (fastQuitEnabled) {
-				exit(0);
-			} else {
-				pause();
-				displayExitDialog(0);
-				unpause();
-				keysPressed.remove(KeyEvent.VK_Q);
-			}
+			exitOrDisplayDialog();
+			keysPressed.remove(KeyEvent.VK_Q);
 		}
 		
 		// both left and right keys could be pressed at the same time
@@ -274,12 +268,23 @@ public class GameCourt extends JPanel {
 		System.exit(statusCode);;
 	}
 	
+	public void exitOrDisplayDialog() {
+		if (fastQuitEnabled) {
+			exit(0);
+		} else {
+			displayExitDialog(0);
+		}
+	}
+	
 	public void displayExitDialog(int statusCode) {
 		// TODO: clean up resources
+		pause();
 		int quit = JOptionPane.showConfirmDialog(this, "Are you sure?", "Quit?", 
 				JOptionPane.YES_NO_OPTION);
 		if (quit == 0) {
 			exit(statusCode);
+		} else {
+			unpause();
 		}
 	}
 	

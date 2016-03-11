@@ -50,16 +50,12 @@ public class MainWindow extends JFrame {
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
-				court.pause();
-				court.displayExitDialog(0);
-				court.unpause();
+				court.exitOrDisplayDialog();
 			}
 		});
 		mntmQuit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				court.pause();
-				court.displayExitDialog(0);
-				court.unpause();
+				court.exitOrDisplayDialog();
 			}
 		});
 		
